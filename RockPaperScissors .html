@@ -2,20 +2,51 @@
 <html>
 <head>
     <title>Rock Paper Scissors</title>
+
+    <style>
+      .rocking{
+        border-width: 0;
+        size: auto;
+      }
+    </style>
 </head>
 <body>
   <p>Rock Paper Scissors</p>
-  <button onclick="
-    player_move('rock');
-  ">Rock</button>
 
-    <button onclick="
-    player_move('paper');
-  ">Paper</button>
+  <div style="
+      max-width:  60px;
+      flex-direction: row;
+      display: flex;">
 
-    <button onclick="
-    player_move('scissors');
-  ">Scissors</button>
+    <button class="rocking"
+      onclick="player_move('rock');"
+     type="button">
+     
+     <img src="rock.png" height ="50px" width="50px">
+    </button>
+  </div>
+
+  <div style="
+        max-width:  60px;
+        display: flex;">
+
+      <button class="rocking"
+        onclick="player_move('paper');"
+      type="button">
+
+      <img src="paper.png" height ="50px" width="50px">
+      </button>
+  </div>
+        <div style="
+      max-width:  60px;
+      display: flex;">
+    <button class="rocking"
+      onclick="player_move('scissors');"
+    type="button">
+    <img src="Scissors.png" height ="50px" width="50px">
+    </button>
+</div>
+ 
 
     <p class="js-result"></p>
     <p class="js-moves"></p>
@@ -111,7 +142,7 @@
 
         document.querySelector('.js-result').innerHTML = result;
 
-        document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+        document.querySelector('.js-moves').innerHTML = `You ${player} - ${computer} Computer`;
 
       }
       function updateScoreElement() {
